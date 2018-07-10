@@ -11,4 +11,4 @@ class Order extends Component {
   };
 };
 
-export {Order};
+export default Order;
