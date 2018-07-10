@@ -9,9 +9,9 @@ class Fish extends Component {
     const image = require(`${details.image}`);
     return (
       <li className='Fish'>
-      <img src={image} alt={details.name} />
+        <img src={image} alt={details.name} />
         <h3>{details.name}
-        <span className='price'>{formatePrice(details.price)}</span>
+          <span className='price'>{formatePrice(details.price)}</span>
         </h3>
         <p>{details.desc}</p>
         <button disabled={!isAvailable}>
