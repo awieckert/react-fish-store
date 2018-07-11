@@ -12,7 +12,7 @@ class Order extends Component {
     const count = this.props.order[key];
     const xClickFunction = () => {
       this.props.removeFromOrder(key);
-    }
+    };
 
     return (
       <li key={key} className='text-left'>
