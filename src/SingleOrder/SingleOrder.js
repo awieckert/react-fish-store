@@ -18,6 +18,15 @@ class SingleOrder extends React.Component {
     fishes: [],
   }
 
+  updateOrderClick = () => {
+    const firebaseId = this.props.match.params.id;
+    orderRequests.updateOrder(firebaseId, this.state.order).then(() => {
+      this.props.history.push('/orders');
+    }).catch((err) => {
+      console.error('Failed to update order: ', err);
+    });
+  };
+
   modifyOrder (id) {
     const modifiedOrder = {...this.state.order};
     delete modifiedOrder.fishes[id];
@@ -111,7 +120,7 @@ class SingleOrder extends React.Component {
         </div>
         <div>
           <div className="col-xs-6">
-            <button className="col-xs-12 btn btn-default">
+            <button className="col-xs-12 btn btn-default" onClick={this.updateOrderClick}>
               Update Order
             </button>
           </div>
