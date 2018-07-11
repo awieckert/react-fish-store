@@ -7,9 +7,9 @@ import {Inventory} from '../Inventory/Inventory.js';
 import {Login} from '../Login/Login.js';
 import {Navbar} from '../Navbar/Navbar.js';
 import {New} from '../New/New.js';
-import {OrderSpa} from '../OrderSpa/OrderSpa.js';
+import OrderSpa from '../OrderSpa/OrderSpa.js';
 import {Register} from '../Register/Register.js';
-import {SingleOrder} from '../SingleOrder/SingleOrder.js';
+import SingleOrder from '../SingleOrder/SingleOrder.js';
 import fbConnection from '../FirebaseRequests/connection.js';
 fbConnection();
 
@@ -84,7 +84,7 @@ class App extends React.Component {
                   <PublicRoute path='/register' authed={this.state.authed} component={Register}/>
                   <PublicRoute path='/login' authed={this.state.authed} component={Login}/>
                   <PrivateRoute path='/orders' authed={this.state.authed} component={OrderSpa}/>
-                  <PrivateRoute path='/orders/:id' authed={this.state.authed} component={SingleOrder}/>
+                  <PrivateRoute path='/order/:id' authed={this.state.authed} component={SingleOrder}/>
                   <PrivateRoute path='/New' authed={this.state.authed} component={New}/>
                 </Switch>
               </div>
